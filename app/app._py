@@ -1,0 +1,10 @@
+from flask import Flask
+
+from config import Configuration
+from neomodel import config
+
+
+app = Flask(__name__)
+app.config.from_object(Configuration)
+
+config.DATABASE_URL = 'bolt://neo4j:Password!@localhost:7687'
